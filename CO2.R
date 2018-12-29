@@ -6,12 +6,11 @@ library(grid)
 library(gridBase)
 
 # Load data
-file <- file.choose()
-data <- read.csv(file)
+data <- read.csv("https://raw.githubusercontent.com/TrevorHD/CO2/master/EmissionsByCountry.csv")
 
 # Remove irrelevant columns; rename country name column
 data %>% select(-"Country.Code", -"Indicator.Name", -"Indicator.Code") %>% 
-         rename("Country" = "ï..Country.Name") -> data
+         rename("Country" = "Ã¯..Country.Name") -> data
 
 # Remove the following non-countries
 # Must do it manually since there really isn't a better way
@@ -273,7 +272,7 @@ data2 <- read.csv(file2)
 
 # Remove irrelevant columns and rename country name column
 data2 %>% select(-"Country.Code", -"Indicator.Name", -"Indicator.Code") %>% 
-          rename("Country" = "ï..Country.Name") -> data2
+          rename("Country" = "Ã¯..Country.Name") -> data2
 
 # Remove the following non-countries
 # Must do it manually since there really isn't a better way
