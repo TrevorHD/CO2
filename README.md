@@ -1,4 +1,4 @@
-# CO2
+# Overview
 
 This small project is a simple analysis of CO2 emissions by various countries over the course of two decades.
 
