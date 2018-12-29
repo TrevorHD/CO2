@@ -161,7 +161,7 @@ data %>% mutate("Total" = as.numeric(rowSums(.[36:56])/1e6)) %>%
 
 # ----- Top 5 CO2-producing countries within "other" category (annual emissions from 1994-2014) ---
 
-# Calculate total emissions; convert kilotonnes to gigatonnes
+         # Calculate total emissions; convert kilotonnes to gigatonnes
 data %>% mutate("Total" = as.numeric(rowSums(.[36:56])/1e6)) %>%
          mutate_at(vars(paste0(c(1960:2014))), funs(./1e6)) %>%
   
