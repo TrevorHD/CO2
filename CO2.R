@@ -1,4 +1,4 @@
-# ----- Initialise and tidy data ------------------------------------------------------------------
+##### Initialise and tidy data ----------------------------------------------------------------------------
 
 # Load packages to be used
 library(tidyverse)
@@ -10,7 +10,7 @@ data <- read.csv("https://raw.githubusercontent.com/TrevorHD/CO2/master/Emission
 
 # Remove irrelevant columns; rename country name column
 data %>% select(-"Country.Code", -"Indicator.Name", -"Indicator.Code") %>% 
-         rename("Country" = "Ã¯..Country.Name") -> data
+         rename("Country" = "ï..Country.Name") -> data
 
 # Remove the following non-countries
 # Must do it manually since there really isn't a better way
@@ -69,9 +69,9 @@ names(data) <- str_replace(names(data), "X(.*)(.*)(.*)(.*)", "\\1\\2\\3\\4")
 
 
 
-# ----- Top 15 CO2-producing countries (total emissions from 1994-2014) ----------------------------
+##### Top 15 CO2-producing countries (total emissions from 1994-2014) -------------------------------------
 
-         # Change factors to characters to make ggplot play nice
+# Change factors to characters to make ggplot play nice
 data %>% mutate_if(is.factor, as.character) %>% 
   
          # Calculate total emissions over the time period; convert from kilotonnes to gigatonnes
@@ -119,9 +119,9 @@ data %>% mutate_if(is.factor, as.character) %>%
 
 
 
-# ----- Top 5 CO2-producing countries (annual emissions from 1994-2014) ---------------------------
+##### Top 5 CO2-producing countries (annual emissions from 1994-2014) -------------------------------------
 
-         # Calculate total emissions; convert kilotonnes to gigatonnes
+# Calculate total emissions; convert kilotonnes to gigatonnes
 data %>% mutate("Total" = as.numeric(rowSums(.[36:56])/1e6)) %>%
          mutate_at(vars(paste0(c(1960:2014))), funs(./1e6)) %>%
   
@@ -159,13 +159,13 @@ data %>% mutate("Total" = as.numeric(rowSums(.[36:56])/1e6)) %>%
 
 
 
-# ----- Top 5 CO2-producing countries within "other" category (annual emissions from 1994-2014) ---
+##### Top 5 CO2-producing countries within "other" category (annual emissions from 1994-2014) -------------
 
-         # Calculate total emissions; convert kilotonnes to gigatonnes
+# Calculate total emissions; convert kilotonnes to gigatonnes
 data %>% mutate("Total" = as.numeric(rowSums(.[36:56])/1e6)) %>%
          mutate_at(vars(paste0(c(1960:2014))), funs(./1e6)) %>%
   
-         # Sort and take only the top 5
+         # Sort and take only the top 10
          arrange_at("Total", desc) %>% 
          slice(c(6:15)) %>%
   
@@ -203,7 +203,7 @@ data %>% mutate("Total" = as.numeric(rowSums(.[36:56])/1e6)) %>%
 
 
 
-# ----- Plot all graphs in one visualisation ------------------------------------------------------
+##### Plot all graphs in one visualisation ----------------------------------------------------------------
 
 # Prepare graphics device
 jpeg(filename = "CO2Plots.jpeg", width = 2000, height = 1500, units = "px")
