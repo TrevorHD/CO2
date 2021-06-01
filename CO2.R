@@ -99,7 +99,7 @@ data %>% mutate_if(is.factor, as.character) %>%
                                              "mediumturquoise", "steelblue2", "yellow2", "seagreen3",
                                              "turquoise2", "gray47", "orangered", "purple", 
                                              "slateblue2", "limegreen", "red2")) +
-                ylab("Percent of total global CO2 emissions, 1994-2014") +
+                ylab(expression("Percent of total global CO"[2]*" emissions", 1994-2014)) +
                 theme(legend.position = "none", 
                       panel.grid.major = element_blank(), 
                       panel.grid.minor = element_blank(),
@@ -144,7 +144,7 @@ data %>% mutate("Total" = as.numeric(rowSums(.[36:56])/1e6)) %>%
                 scale_x_discrete(breaks = seq(1994, 2014, by = 2), expand = c(0.01, 0.01)) +
                 scale_y_continuous(minor_breaks = seq(0 , 20, 2), breaks = seq(0, 20, 4), 
                                    expand = c(0.01, 0.01)) +
-                ylab("Annual CO2 emissions (billions of tonnes)") + 
+                ylab(expression("Annual CO"[2]*" emissions (billions of tonnes)")) + 
                 theme(legend.position = "none",
                       panel.grid.major = element_line(colour = "gray74"), 
                       panel.grid.minor = element_line(colour = "gray74"),
@@ -188,7 +188,7 @@ data %>% mutate("Total" = as.numeric(rowSums(.[36:56])/1e6)) %>%
                 scale_x_discrete(breaks = seq(1994, 2014, by = 2), expand = c(0.01, 0.01)) +
                 scale_y_continuous(minor_breaks = seq(0 , 5, 0.5), breaks = seq(0, 5, 1), 
                                    expand = c(0.01, 0.01)) +
-                ylab("Annual CO2 emissions (billions of tonnes)") + 
+                ylab(expression("Annual CO"[2]*" emissions (billions of tonnes)")) + 
                 theme(legend.position = "none",
                       panel.grid.major = element_line(colour = "gray74"), 
                       panel.grid.minor = element_line(colour = "gray74"),
@@ -235,7 +235,7 @@ print(other10.areagraph, vp = viewport(layout.pos.row = 301:1148, layout.pos.col
 grid.segments(x0 = c(0.021, 0.572, 0.572, 0.742), y0 = rep(0.153, 4),
               x1 = c(0.015, 0.487, 0.512, 0.986), y1 = rep(0.234, 4), gp = gpar(lwd = 2))
 grid.segments(x0 = c(0.021, 0.572, 0.572, 0.742), y0 = rep(0.153, 4),
-              x1 = c(0.021, 0.572, 0.572, 0.742), y1 = rep(0.089, 4), gp = gpar(lwd = 2))
+              x1 = c(0.021, 0.572, 0.572, 0.742), y1 = rep(0.095, 4), gp = gpar(lwd = 2))
 
 # Add text labels for each country
 grid.text(c("China", "United States", "Russia", "India", "Japan"), x = rep(0.43, 5),
@@ -246,12 +246,16 @@ grid.text(c("Germany", "Canada", "United Kingdom", "South Korea", "Iran", "Mexic
           gp = gpar(fontsize = 20))
 
 # Add title text
-grid.text("Top 15 Countries by Total CO2 Emissions, 1994-2014", x = 0.5, y = 0.9,
+grid.text(expression("Top 15 Countries by Total CO"[2]*" Emissions", 1994-2014), x = 0.5, y = 0.9,
           gp = gpar(fontsize = 72))
 
 # Add text for data source
 grid.text("Data Sources: World Bank, Carbon Dioxide Information Analysis Center",
-          x = 0.87, y = 0.025, gp = gpar(fontsize = 14))
+          x = 0.870, y = 0.025, gp = gpar(fontsize = 14))
+
+# Add text for author
+grid.text("Image Source: Trevor H. Drees",
+          x = 0.065, y = 0.025, gp = gpar(fontsize = 14))
 
 # Deactivate grid layout; finalise graphics save
 popViewport()
