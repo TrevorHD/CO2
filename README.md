@@ -13,3 +13,7 @@ An analysis and visualisation of CO2 emissions by various countries over the cou
 **CO2** *(.Rmd)* - The markdown file used to create the PDF output.
 
 **CO2** *(.R)* - The R code used to prepare the data and create graphics.
+
+ <br/><br/>
+
+![](https://github.com/TrevorHD/CO2/blob/master/CO2Plots.jpeg)
