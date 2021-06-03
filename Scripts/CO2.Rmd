@@ -17,7 +17,7 @@ knitr::opts_chunk$set(echo = TRUE, eval = FALSE)
 
 ```{r eval = TRUE, echo = FALSE, out.width = "470px", out.height = "470px", fig.pos = "!t"}
 
-knitr::include_graphics("CO2Plots.jpeg")
+knitr::include_graphics("Figures/CO2Plots.jpeg")
 
 ```
 
