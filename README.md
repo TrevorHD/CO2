@@ -26,8 +26,8 @@ An analysis and visualisation of CO2 emissions by various countries over the cou
 
 <br/>
 
-# Featured Images
+# Featured Image
 
-Noteworthy or interesting plots, images, figures, and other graphical outputs from the code are included below.
+CO2 emissions of the top 15 CO2-emitting countries from 1994 - 2014 are shown below. The grey bar represents all other countries and accounts for about 25% of global emissions during this time period. Note that these figures are in absolute terms, not per-capita, and that the *y*-axis scaling is much larger on the left panel.
 
 <kbd>![](https://github.com/TrevorHD/CO2/blob/master/Figures/CO2Plots.jpeg)</kbd>
